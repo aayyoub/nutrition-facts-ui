@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './NutritionFacts.css';
+import ReactFitText from 'react-fittext'
+import Barcode from 'react-barcode';
 
 export default class NutritionFacts extends Component {
     constructor(props) {
@@ -10,9 +12,11 @@ export default class NutritionFacts extends Component {
         return (
             <div>
                 {this.props.nutritionFacts.caloriesValueFormatted &&
-                <div className="nutrition-facts-section align-self-center">
+                <div className="nutrition-facts-section">
                     <div className="nutrition-facts-header-section">
-                        <h1 className="nutrition-facts-title">Nutrition Facts</h1>
+                        <ReactFitText compressor={0.71}>
+                            <h1 className="nutrition-facts-title">Nutrition Facts</h1>
+                        </ReactFitText>
                         <h2 className="nutrition-facts-servings-per-container">1 serving per container</h2>
                         <p className="nutrition-facts-serving-size">Serving size 100 grams</p>
                     </div>
@@ -73,6 +77,7 @@ export default class NutritionFacts extends Component {
                         </tr>
                         </tbody>
                     </table>
+                    <Barcode height={50} value="ayyoub" displayValue={false} />
                 </div>
                 }
             </div>);
