@@ -1,5 +1,7 @@
 #!/bin/bash
 
+whoami
+
 #clone into applications
 cd /applications/
 unset GIT_DIR
