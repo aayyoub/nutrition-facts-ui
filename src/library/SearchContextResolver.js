@@ -2,7 +2,7 @@ export default class SearchContextResolver {
     containsFood() {
         let path = window.location.pathname;
 
-        return path && path.includes('nutrition/');
+        return path && path.includes('food/');
     }
 
     getFoodId() {
@@ -11,7 +11,7 @@ export default class SearchContextResolver {
         let foodIdIndex = 0;
 
         pathParts.forEach(function (part, index) {
-            if (part === 'nutrition') {
+            if (part === 'food') {
                 foodIdIndex = index + 1;
             }
         });

@@ -49,12 +49,17 @@ export default class FoodSearch extends Component {
         }
     }
 
+    clear() {
+        this.setState({
+            defaultSearchTerm: "",
+        });
+    }
+
     render() {
         return (
             <AsyncTypeahead
                 labelKey="searchTerm"
-                value={"test"}
-                placeholder={"Search food"}
+                placeholder={"Search..."}
                 onSearch={searchTerm => this.getSearchTerms(searchTerm)}
                 onChange={selectedSearchTerm => this.selectFood(selectedSearchTerm)}
                 options={this.state.searchTerms}
