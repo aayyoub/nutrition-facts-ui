@@ -5,7 +5,7 @@ cd /applications/
 unset GIT_DIR
 rm -rf food-information-ui
 git clone /applications/food-information-ui.git
-echo '✓ Cloned repositoryyy'
+echo '✓ Cloned repository'
 
 #install dependencies
 cd /applications/food-information-ui
