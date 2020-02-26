@@ -5,11 +5,10 @@ cd /applications/
 unset GIT_DIR
 rm -rf food-information-ui
 git clone /applications/food-information-ui.git
-echo '✓ Cloned repository'
+echo '✓ Cloned repositoryyy'
 
 #install dependencies
 cd /applications/food-information-ui
-echo whoami
 yarn install
 echo '✓ Installed dependencies'
 
