@@ -9,7 +9,6 @@ echo '✓ Cloned repository'
 
 #install dependencies
 cd /applications/food-information-ui
-yarn install
-yarn build
+yarn run build
 echo '✓ Installed dependencies'
 
