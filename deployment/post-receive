@@ -1,7 +1,5 @@
 #!/bin/bash
 
-whoami
-
 #clone into applications
 cd /applications/
 unset GIT_DIR
@@ -11,6 +9,7 @@ echo '✓ Cloned repository'
 
 #install dependencies
 cd /applications/food-information-ui
+whoami
 yarn install
 echo '✓ Installed dependencies'
 
