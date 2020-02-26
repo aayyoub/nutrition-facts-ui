@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#clone into applications
+cd /applications/
+unset GIT_DIR
+rm -rf food-information-ui
+git clone /applications/food-information-ui.git
+echo '✓ Cloned repository'
+
+#install dependencies
+cd /applications/food-information-ui
+yarn install
+echo '✓ Installed dependencies'
+
+#move server deployment scrips and make executable
+cp /applications/food-information-ui/deployment/server.sh /deployment/food-information-ui/server.sh
+chmod 744 /deployment/food-information-ui/server.sh
+echo '✓ Moved deployment scripts to deployment directory'
+
+#create and start server script
+cp /applications/food-information-ui/deployment/food-information-ui.service /etc/systemd/system/food-information-ui.service
+systemctl daemon-reload
+systemctl stop food-information-ui
+systemctl start food-information-ui
+systemctl enable food-information-ui
+echo '✓ Started server script'
+
+#success messages
+figlet food-information-ui
+echo '✓ SUCCESS'
