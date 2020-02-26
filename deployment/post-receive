@@ -9,7 +9,7 @@ echo '✓ Cloned repository'
 
 #install dependencies
 cd /applications/food-information-ui
-whoami
+echo whoami
 yarn install
 echo '✓ Installed dependencies'
 
