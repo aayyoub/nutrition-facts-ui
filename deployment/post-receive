@@ -11,5 +11,7 @@ echo '✓ Cloned repository'
 cd /applications/food-information-ui
 yarn install
 yarn run build
-echo '✓ Installed dependencies'
+echo '✓ Installed dependencies and created production build'
 
+service nginx restart
+echo '✓ Restarted nginx'
