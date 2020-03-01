@@ -37,15 +37,6 @@ export default class ExploreFood extends Component {
         return (
             <div>
                 {
-                    this.state.isLoading &&
-                    <Row>
-                        <Col>
-                            <br/>
-                            <Spinner animation="border"/>
-                        </Col>
-                    </Row>
-                }
-                {
                     !this.state.isLoading &&
                     <h4>Explore Food</h4>
                 }
