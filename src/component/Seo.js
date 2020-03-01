@@ -9,8 +9,8 @@ export default class Seo extends Component {
     render() {
         return (
             <Helmet>
-                <title>{this.props.longDescription}</title>
-                <meta name="description" content={this.props.formattedDescription}/>
+                <title>{this.props.title}</title>
+                <meta name="description" content={this.props.description}/>
             </Helmet>
         );
     }

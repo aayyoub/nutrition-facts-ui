@@ -63,8 +63,13 @@ export default class App extends Component {
             <div>
                 <Container>
                     {
+                        !this.state.longDescription &&
+                        <Seo title="Nutrition facts and information for food. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values."
+                             description="Nutrition facts and information for food. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values."/>
+                    }
+                    {
                         this.state.longDescription &&
-                        <Seo longDescription={this.state.longDescription} formattedDescription={this.state.formattedDescription}/>
+                        <Seo title={this.state.formattedDescription} description={this.state.formattedDescription}/>
                     }
                     <br/>
                     <Row>
