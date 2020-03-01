@@ -9,14 +9,13 @@ import SearchContextResolver from "./library/SearchContextResolver";
 import FoodSearch from "./component/FoodSearch";
 import {Spinner} from 'react-bootstrap';
 import NutritionFacts from "./component/nutritionfacts/NutritionFacts";
-import {Helmet} from "react-helmet";
 import Seo from "./component/Seo";
+import ExploreFood from "./component/explorefood/ExploreFood";
 
 export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchTerms: [],
             longDescription: "",
             formattedDescription: "",
             formattedCalories: "",
@@ -66,12 +65,12 @@ export default class App extends Component {
                 <Container>
                     {
                         this.state.longDescription &&
-                            <Seo longDescription={this.state.longDescription} formattedDescription={this.state.formattedDescription}/>
+                        <Seo longDescription={this.state.longDescription} formattedDescription={this.state.formattedDescription}/>
                     }
                     <br/>
                     <Row>
                         <Col sm={2}>
-                            <img style={{width:240, align:"left", margin: "0.5em"}} src={logo} alt="NutritionFacts.io Logo" />
+                            <img style={{width: 240, align: "left", margin: "0.5em"}} src={logo} alt="NutritionFacts.io Logo"/>
                         </Col>
                     </Row>
                     <br/>
@@ -114,7 +113,8 @@ export default class App extends Component {
                     <Row>
                         {/*<CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>*/}
                     </Row>
-                    <br/>
+                    <hr/>
+                    <ExploreFood/>
                 </Container>
             </div>
         );

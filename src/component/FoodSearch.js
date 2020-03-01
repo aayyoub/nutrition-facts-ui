@@ -27,8 +27,6 @@ export default class FoodSearch extends Component {
             return;
         }
 
-
-
         this.setState({isLoading: true});
 
         let getSearchTermsRequest = new GetSearchTermsRequest();

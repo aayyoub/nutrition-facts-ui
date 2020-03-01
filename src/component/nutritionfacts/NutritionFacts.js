@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './NutritionFacts.css';
 import ReactFitText from 'react-fittext'
-import Barcode from 'react-barcode';
 
 export default class NutritionFacts extends Component {
     constructor(props) {
@@ -77,7 +76,6 @@ export default class NutritionFacts extends Component {
                         </tr>
                         </tbody>
                     </table>
-                    <Barcode height={50} value="ayyoub" displayValue={false} />
                 </div>
                 }
             </div>);
