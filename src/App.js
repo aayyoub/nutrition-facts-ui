@@ -24,7 +24,7 @@ export default class App extends Component {
             overview: [],
             vitamins: [],
             minerals: [],
-            isLoading: false,
+            isLoading: true,
         };
     }
 
@@ -36,10 +36,9 @@ export default class App extends Component {
         let searchContextResolver = new SearchContextResolver();
 
         if (!searchContextResolver.containsFood()) {
+            this.setState({isLoading: false});
             return;
         }
-
-        this.setState({isLoading: true});
 
         let foodId = searchContextResolver.getFoodId();
 
@@ -70,14 +69,19 @@ export default class App extends Component {
                     <br/>
                     <Row>
                         <Col sm={2}>
-                            <img style={{width: 240, align: "left", margin: "0.5em"}} src={logo} alt="NutritionFacts.io Logo"/>
+                            <img style={{width: 200, align: "left", margin: "0.5em"}} src={logo} alt="NutritionFacts.io Logo"/>
                         </Col>
                     </Row>
                     <br/>
                     <FoodSearch/>
                     {
                         this.state.isLoading &&
-                        <Spinner animation="border"/>
+                        <Row>
+                            <Col>
+                                <br/>
+                                <Spinner animation="border"/>
+                            </Col>
+                        </Row>
                     }
                     {
                         this.state.longDescription &&
