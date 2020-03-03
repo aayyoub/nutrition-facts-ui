@@ -3,14 +3,15 @@ import GetFoodRequest from "./library/request/GetFoodRequest";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import NutrientsTable from "./component/NutrientsTable";
+import NutrientsTable from "./component/nutrientstable/NutrientsTable";
 import logo from "./image/logo.png";
 import SearchContextResolver from "./library/SearchContextResolver";
-import FoodSearch from "./component/FoodSearch";
+import FoodSearch from "./component/foodsearch/FoodSearch";
 import {Spinner} from 'react-bootstrap';
 import NutritionFacts from "./component/nutritionfacts/NutritionFacts";
-import Seo from "./component/Seo";
+import Seo from "./component/seo/Seo";
 import ExploreFood from "./component/explorefood/ExploreFood";
+import Analytics from "./component/analytics/Analytics";
 
 export default class App extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class App extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getFood();
     }
 
@@ -61,6 +62,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                <Analytics/>
                 <Container>
                     {
                         !this.state.longDescription &&

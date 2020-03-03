@@ -3,10 +3,6 @@ import './NutritionFacts.css';
 import ReactFitText from 'react-fittext'
 
 export default class NutritionFacts extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>

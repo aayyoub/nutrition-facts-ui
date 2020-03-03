@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import GetExploreFoodRequest from "../../library/request/GetExploreFoodRequest";
 import './ExploreFood.css';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import {Spinner} from "react-bootstrap";
-import Container from "react-bootstrap/Container";
 
 export default class ExploreFood extends Component {
     constructor(props) {
@@ -15,7 +11,7 @@ export default class ExploreFood extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getFood();
     }
 
