@@ -8,7 +8,7 @@ export default class Analytics extends Component {
 
     initializeGoogleAnalytics() {
         ReactGA.initialize('UA-159448958-1');
-        ReactGA.pageview('/');
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     render() {

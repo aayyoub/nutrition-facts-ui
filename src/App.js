@@ -76,7 +76,9 @@ export default class App extends Component {
                     <br/>
                     <Row>
                         <Col sm={2}>
-                            <img style={{width: 200, align: "left", margin: "0.5em"}} src={logo} alt="NutritionFacts.io Logo"/>
+                            <a href="https://www.nutritionfacts.io/">
+                                <img style={{width: 200, align: "left", margin: "0.5em"}} src={logo} alt="NutritionFacts.io Logo"/>
+                            </a>
                         </Col>
                     </Row>
                     <br/>
