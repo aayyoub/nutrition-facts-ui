@@ -63,7 +63,7 @@ export default class NutritionFacts extends Component {
                         </tr>
                         <tr>
                             <td className="nutrition-facts-empty-cell"/>
-                            <th>Total Sugars</th>
+                            <th>Total Sugars {this.props.nutritionFacts.sugarValueFormatted}</th>
                             <td/>
                         </tr>
                         <tr>
