@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Table from 'react-bootstrap/Table';
+import './NutrientsTable.css'
 
 export default class NutrientsTable extends Component {
     render() {
@@ -8,7 +9,7 @@ export default class NutrientsTable extends Component {
                 {
                     this.props.nutrients.length > 0 &&
                     <Table responsive size="sm">
-                        <h1 className="nutrient-table-header">{this.props.header}</h1>
+                        <h3 className="section-title">{this.props.header}</h3>
                         <tbody>
                         {this.props.nutrients.map((nutrient) =>
                             <tr>

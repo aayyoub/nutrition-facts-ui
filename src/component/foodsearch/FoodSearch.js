@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {AsyncTypeahead} from "react-bootstrap-typeahead";
 import GetSearchTermsRequest from "../../library/request/GetSearchTermsRequest";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
-import SearchContextResolver from "../../library/SearchContextResolver";
+import SearchContextResolver from "../../library/util/SearchContextResolver";
 import SearchRedirect from "../../library/util/SearchRedirect";
 
 export default class FoodSearch extends Component {

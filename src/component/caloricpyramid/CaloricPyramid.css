@@ -1,0 +1,24 @@
+.caloric-pyramid {
+    margin-top: 2rem;
+    margin-bottom: 2.0rem;
+}
+
+.caloric-ratio-header {
+    font-family: "Helvetica Neue", serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.list-group-caloric-pyramid {
+    margin-left: 0 !important;
+}
+
+.list-group-item-caloric-pyramid {
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-color: black;
+}
+

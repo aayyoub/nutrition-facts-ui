@@ -1,0 +1,62 @@
+.App {
+    text-align: center;
+}
+
+.h1 {
+    font-family: "Helvetica Neue", serif !important;
+    font-size: 1.9rem !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+
+.h2 {
+    font-family: "Helvetica Neue", serif !important;
+    font-size: 1.75rem !important;
+    text-align: left !important;
+}
+
+.h3 {
+    font-family: "Helvetica Neue", serif !important;
+    font-size: 1.6rem !important;
+    text-align: left !important;
+}
+
+.section-title {
+    font-family: "Helvetica Neue", serif !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+
+
+
+.list-group {
+  font-size: 10pt;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+
+hr {
+  margin-top: 2em;
+}
+
+input {
+    width: 85%;
+    text-indent: 10px;
+}
+
+.spinner-border {
+    margin-left: 0.50em;
+    margin-top: 0.40em;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.text-right {
+    text-align: right;
+}

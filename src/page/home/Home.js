@@ -1,19 +1,21 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React, {Component} from 'react';
-import GetFoodRequest from "./library/request/GetFoodRequest";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import NutrientsTable from "./component/nutrientstable/NutrientsTable";
-import logo from "./image/logo.png";
-import SearchContextResolver from "./library/SearchContextResolver";
-import FoodSearch from "./component/foodsearch/FoodSearch";
-import {Spinner} from 'react-bootstrap';
-import NutritionFacts from "./component/nutritionfacts/NutritionFacts";
-import Seo from "./component/seo/Seo";
-import ExploreFood from "./component/explorefood/ExploreFood";
-import Analytics from "./component/analytics/Analytics";
+import Spinner from 'react-bootstrap/Spinner';
+import logo from "../../image/logo.png";
+import FoodSearch from "../../component/foodsearch/FoodSearch";
+import Analytics from "../../component/analytics/Analytics";
+import Seo from "../../component/seo/Seo";
+import CaloricPyramid from "../../component/caloricpyramid/CaloricPyramid";
+import NutritionFacts from "../../component/nutritionfacts/NutritionFacts";
+import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
+import ExploreFood from "../../component/explorefood/ExploreFood";
+import SearchContextResolver from "../../library/util/SearchContextResolver";
+import GetFoodRequest from "../../library/request/GetFoodRequest";
 
-export default class App extends Component {
+export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -100,11 +102,11 @@ export default class App extends Component {
                         <Col>
                             {
                                 this.state.longDescription &&
-                                <h2>{this.state.longDescription}</h2>
+                                <h1 className="h1">{this.state.longDescription}</h1>
                             }
                             {
                                 this.state.formattedCalories &&
-                                <h4>{this.state.formattedCalories}</h4>
+                                <h2 className="h2">{this.state.formattedCalories}</h2>
                             }
                             {
                                 this.state.formattedDescription &&
@@ -112,6 +114,13 @@ export default class App extends Component {
                             }
                         </Col>
                     </Row>
+                    { this.state.caloricPyramid.length !== 0 &&
+                    <Row>
+                        <Col>
+                            <CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>
+                        </Col>
+                    </Row>
+                    }
                     <Row>
                         <Col md={6} lg={4}>
                             <NutritionFacts nutritionFacts={this.state.nutritionFacts}/>
@@ -122,9 +131,6 @@ export default class App extends Component {
                         <Col md={12} lg={4}>
                             <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
                         </Col>
-                    </Row>
-                    <Row>
-                        {/*<CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>*/}
                     </Row>
                     <hr/>
                     <ExploreFood/>

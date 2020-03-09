@@ -3,6 +3,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
+    <loc>https://www.nutritionfacts.io/</loc>
+    <changefreq>weekly</changefreq>
+    <lastmod>2020-03-01T22:01:35+00:00</lastmod>
+</url>
+
+<url>
 	<loc>https://www.nutritionfacts.io/food/01001/butter-salted</loc>
 	<changefreq>weekly</changefreq>
 	<lastmod>2020-03-01T22:01:35+00:00</lastmod>
