@@ -3,11 +3,10 @@ import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Spinner from 'react-bootstrap/Spinner';
-import logo from "../../image/logo.png";
 import FoodSearch from "../../component/foodsearch/FoodSearch";
 import Analytics from "../../component/analytics/Analytics";
 import Seo from "../../component/seo/Seo";
+import Logo from "../../component/logo/Logo";
 import CaloricPyramid from "../../component/caloricpyramid/CaloricPyramid";
 import NutritionFacts from "../../component/nutritionfacts/NutritionFacts";
 import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
@@ -66,55 +65,36 @@ export default class Home extends Component {
             <div>
                 <Analytics/>
                 <Container>
-                    {
-                        !this.state.longDescription &&
-                        <Seo title="Nutrition facts and information for food. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values."
-                             description="Nutrition facts and information for food. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values."/>
-                    }
-                    {
-                        this.state.longDescription &&
-                        <Seo title={this.state.formattedDescription} description={this.state.formattedDescription}/>
-                    }
-                    <br/>
+                    <Seo title={this.state.formattedDescription} description={this.state.formattedDescription}/>
                     <Row>
                         <Col sm={2}>
-                            <a href="https://www.nutritionfacts.io/">
-                                <img style={{width: 200, align: "left", margin: "0.5em"}} src={logo} alt="NutritionFacts.io Logo"/>
-                            </a>
+                            <Logo/>
                         </Col>
                     </Row>
-                    <br/>
                     <FoodSearch/>
+                    <hr/>
                     {
-                        this.state.isLoading &&
-                        <Row>
-                            <Col>
-                                <br/>
-                                <Spinner animation="border"/>
-                            </Col>
-                        </Row>
+                        !this.state.isLoading &&
+                        <div>
+                            <Row>
+                                <Col>
+                                    {
+                                        this.state.longDescription.length > 0 &&
+                                        <h1 className="h1">{this.state.longDescription}</h1>
+                                    }
+                                    {
+                                        this.state.formattedCalories.length > 0 &&
+                                        <h2 className="h2">{this.state.formattedCalories}</h2>
+                                    }
+                                    {
+                                        this.state.formattedDescription.length > 0 &&
+                                        <p>{this.state.formattedDescription}</p>
+                                    }
+                                </Col>
+                            </Row>
+                        </div>
                     }
-                    {
-                        this.state.longDescription &&
-                        <hr/>
-                    }
-                    <Row>
-                        <Col>
-                            {
-                                this.state.longDescription &&
-                                <h1 className="h1">{this.state.longDescription}</h1>
-                            }
-                            {
-                                this.state.formattedCalories &&
-                                <h2 className="h2">{this.state.formattedCalories}</h2>
-                            }
-                            {
-                                this.state.formattedDescription &&
-                                <p>{this.state.formattedDescription}</p>
-                            }
-                        </Col>
-                    </Row>
-                    { this.state.caloricPyramid.length !== 0 &&
+                    {this.state.caloricPyramid.length !== 0 &&
                     <Row>
                         <Col>
                             <CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>
@@ -132,7 +112,6 @@ export default class Home extends Component {
                             <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
                         </Col>
                     </Row>
-                    <hr/>
                     <ExploreFood/>
                 </Container>
             </div>

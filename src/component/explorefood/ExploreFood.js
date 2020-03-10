@@ -33,15 +33,16 @@ export default class ExploreFood extends Component {
         return (
             <div>
                 {
-                    !this.state.isLoading &&
-                    <h4>Explore Food</h4>
+                    !this.state.isLoading ?
+                    <div>
+                        <h3 className="section-title">Explore Food</h3>
+                        {
+                            this.state.food.map((food) =>
+                                <a href={food.url}><p>{food.foodDescription}</p></a>
+                            )
+                        }
+                    </div> : null
                 }
-                {
-                    this.state.food.map((food) =>
-                        <a href={food.url}><p>{food.foodDescription}</p></a>
-                    )
-                }
-                <br/>
             </div>
         );
     }

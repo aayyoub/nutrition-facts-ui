@@ -4,6 +4,7 @@ import GetSearchTermsRequest from "../../library/request/GetSearchTermsRequest";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import SearchContextResolver from "../../library/util/SearchContextResolver";
 import SearchRedirect from "../../library/util/SearchRedirect";
+import './FoodSearch.css'
 
 export default class FoodSearch extends Component {
     constructor(props) {
@@ -55,16 +56,19 @@ export default class FoodSearch extends Component {
 
     render() {
         return (
-            <AsyncTypeahead
-                labelKey="searchTerm"
-                placeholder={"Search..."}
-                onSearch={searchTerm => this.getSearchTerms(searchTerm)}
-                onChange={selectedSearchTerm => this.selectFood(selectedSearchTerm)}
-                options={this.state.searchTerms}
-                isLoading={this.state.isLoading}
-                clearButton={true}
-                defaultInputValue={this.state.defaultSearchTerm}
-            />
+            <div className="typeahead">
+                <AsyncTypeahead
+                    labelKey="searchTerm"
+                    placeholder={"Search..."}
+                    onSearch={searchTerm => this.getSearchTerms(searchTerm)}
+                    onChange={selectedSearchTerm => this.selectFood(selectedSearchTerm)}
+                    options={this.state.searchTerms}
+                    isLoading={this.state.isLoading}
+                    clearButton={true}
+                    defaultInputValue={this.state.defaultSearchTerm}
+                />
+            </div>
+
         );
     }
 }
