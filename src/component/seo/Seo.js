@@ -13,9 +13,9 @@ export default class Seo extends Component {
                     </Helmet>
                     :
                     <Helmet>
-                        <title>Nutrition facts and information for food. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values.</title>
+                        <title>NutritionFacts.io | Nutrition Facts and Information</title>
                         <meta name="description"
-                              content={"Nutrition facts and information for food. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values."}/>
+                              content={"Nutrition facts and information. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values."}/>
                     </Helmet>
                 }
             </div>
