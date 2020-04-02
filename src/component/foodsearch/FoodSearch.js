@@ -10,17 +10,9 @@ export default class FoodSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            defaultSearchTerm: "",
             searchTerms: [],
             isLoading: false
         }
-    }
-
-    componentDidMount() {
-        let searchContextResolver = new SearchContextResolver();
-        let defaultSearchTerm = searchContextResolver.getSearchTerm();
-
-        this.setState({defaultSearchTerm: defaultSearchTerm});
     }
 
     async getSearchTerms(searchTerm) {
