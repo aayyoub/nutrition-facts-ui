@@ -23,9 +23,12 @@ export default class Home extends Component {
             formattedCalories: "",
             nutritionFacts: {},
             caloricPyramid: [],
-            overview: [],
             vitamins: [],
             minerals: [],
+            protein: [],
+            carbohydrates: [],
+            fat: [],
+            other: [],
             isLoading: true,
         };
     }
@@ -53,9 +56,12 @@ export default class Home extends Component {
             formattedCalories: food.formattedCalories,
             nutritionFacts: food.nutritionFacts,
             caloricPyramid: food.caloricPyramid,
-            overview: food.nutrientGroups[0].nutrients,
-            vitamins: food.nutrientGroups[1].nutrients,
-            minerals: food.nutrientGroups[2].nutrients,
+            vitamins: food.nutrientGroups[0].nutrients,
+            minerals: food.nutrientGroups[1].nutrients,
+            protein: food.nutrientGroups[2].nutrients,
+            carbohydrates: food.nutrientGroups[3].nutrients,
+            fat: food.nutrientGroups[4].nutrients,
+            other: food.nutrientGroups[5].nutrients,
             isLoading: false
         });
     }
@@ -110,6 +116,17 @@ export default class Home extends Component {
                         </Col>
                         <Col md={12} lg={4}>
                             <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6} lg={4}>
+                            <NutrientsTable header={"Protein"} amount={"Amount"} nutrients={this.state.protein}/>
+                        </Col>
+                        <Col md={6} lg={4}>
+                            <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
+                        </Col>
+                        <Col md={12} lg={4}>
+                            <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
                         </Col>
                     </Row>
                     <ExploreFood/>
