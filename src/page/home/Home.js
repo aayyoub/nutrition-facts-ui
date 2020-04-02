@@ -28,6 +28,7 @@ export default class Home extends Component {
             protein: [],
             carbohydrates: [],
             fat: [],
+            sterols: [],
             other: [],
             isLoading: true,
         };
@@ -61,7 +62,8 @@ export default class Home extends Component {
             protein: food.nutrientGroups[2].nutrients,
             carbohydrates: food.nutrientGroups[3].nutrients,
             fat: food.nutrientGroups[4].nutrients,
-            other: food.nutrientGroups[5].nutrients,
+            sterols: food.nutrientGroups[5].nutrients,
+            other: food.nutrientGroups[6].nutrients,
             isLoading: false
         });
     }
@@ -124,11 +126,14 @@ export default class Home extends Component {
                         </Col>
                         <Col md={6} lg={4}>
                             <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
+                            <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
+                            <NutrientsTable header={"Sterols"} amount={"Amount"} nutrients={this.state.sterols}/>
                         </Col>
                         <Col md={12} lg={4}>
-                            <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
+                            <NutrientsTable header={"Other"} amount={"Amount"} nutrients={this.state.other}/>
                         </Col>
                     </Row>
+                    <hr/>
                     <ExploreFood/>
                 </Container>
             </div>

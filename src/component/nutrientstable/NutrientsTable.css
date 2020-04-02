@@ -1,6 +1,15 @@
-.nutrient-table-header {
+.nutrients-table {
+    margin-bottom: 1.75rem;
+}
+
+.table-data-nutrient {
     font-family: "Helvetica Neue", serif;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 0.75rem;
     text-align: left;
+}
+
+.table-data-value {
+    font-family: "Helvetica Neue", serif;
+    font-size: 0.75rem;
+    text-align: right;
 }
