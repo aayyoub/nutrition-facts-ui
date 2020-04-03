@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,7 +11,7 @@ import NutritionFacts from "../../component/nutritionfacts/NutritionFacts";
 import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
 import SearchContextResolver from "../../library/util/SearchContextResolver";
 import GetFoodRequest from "../../library/request/GetFoodRequest";
-import './Food.css';
+import LoadingIndicator from '../../component/loading/LoadingIndicator';
 
 export default class Food extends Component {
     constructor(props) {
@@ -65,10 +64,10 @@ export default class Food extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 <Analytics/>
                 <Container>
-                    <Seo title={this.state.formattedDescription} description={this.state.formattedDescription}/>
+                    <Seo description={this.state.formattedDescription}/>
                     <Row>
                         <Col sm={2}>
                             <Logo/>
@@ -76,6 +75,10 @@ export default class Food extends Component {
                     </Row>
                     <FoodSearch/>
                     <hr/>
+                    {
+                        this.state.isLoading &&
+                        <LoadingIndicator isLoading={this.state.isLoading}></LoadingIndicator>
+                    }
                     {
                         !this.state.isLoading &&
                         <div>
@@ -121,18 +124,8 @@ export default class Food extends Component {
                             <NutrientsTable header={"Other"} amount={"Amount"} nutrients={this.state.other}/>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md={6} lg={4}>
-                        </Col>
-                        <Col md={6} lg={4}>
-                        </Col>
-                        <Col md={12} lg={4}>
-                        </Col>
-                    </Row>
-                    {/*<hr/>*/}
-                    {/*<ExploreFood/>*/}
                 </Container>
-            </div>
+            </>
         );
     }
 }

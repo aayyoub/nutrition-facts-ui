@@ -5,10 +5,10 @@ export default class Seo extends Component {
     render() {
         return (
             <div>
-                {this.props.title.length > 0
+                {this.props.description.length > 0
                     ?
                     <Helmet>
-                        <title>{this.props.title}</title>
+                        <title>{this.props.description}</title>
                         <meta name="description" content={this.props.description}/>
                     </Helmet>
                     :

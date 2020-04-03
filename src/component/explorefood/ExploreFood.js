@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GetExploreFoodRequest from "../../library/request/GetExploreFoodRequest";
+import LoadingIndicator from "../loading/LoadingIndicator";
 import './ExploreFood.css';
 
 export default class ExploreFood extends Component {
@@ -12,14 +13,10 @@ export default class ExploreFood extends Component {
     }
 
     componentDidMount() {
-        this.getFood();
+        this.getExploreFood();
     }
 
-    async getFood() {
-        this.setState({
-            isLoading: true
-        });
-
+    async getExploreFood() {
         let getExploreFood = new GetExploreFoodRequest();
         let food = await getExploreFood.getFood();
 
@@ -31,19 +28,20 @@ export default class ExploreFood extends Component {
 
     render() {
         return (
-            <div>
+            <>
+                <LoadingIndicator isLoading={this.state.isLoading}></LoadingIndicator>
                 {
-                    !this.state.isLoading ?
+                    !this.state.isLoading &&
                     <div>
-                        <h3 className="section-title">Explore Food</h3>
+                        <h1 className="section-title">Explore Food</h1>
                         {
                             this.state.food.map((food) =>
                                 <a href={food.url}><p>{food.foodDescription}</p></a>
                             )
                         }
-                    </div> : null
+                    </div>
                 }
-            </div>
+            </>
         );
     }
 }

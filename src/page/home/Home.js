@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,7 +7,6 @@ import Analytics from "../../component/analytics/Analytics";
 import Seo from "../../component/seo/Seo";
 import Logo from "../../component/logo/Logo";
 import ExploreFood from "../../component/explorefood/ExploreFood";
-import './Home.css';
 
 export default class Home extends Component {
     constructor(props) {
@@ -20,7 +18,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 <Analytics/>
                 <Container>
                     <Seo title="" description=""/>
@@ -33,7 +31,7 @@ export default class Home extends Component {
                     <hr/>
                     <ExploreFood/>
                 </Container>
-            </div>
+            </>
         );
     }
 }

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './NutritionFacts.css';
-import ReactFitText from 'react-fittext'
+import ReactFitText from 'react-fittext';
 
 export default class NutritionFacts extends Component {
     render() {
         return (
-            <div>
+            <>
                 {this.props.nutritionFacts.caloriesValueFormatted &&
                 <div className="nutrition-facts-section">
                     <div className="nutrition-facts-header-section">
@@ -74,6 +74,6 @@ export default class NutritionFacts extends Component {
                     </table>
                 </div>
                 }
-            </div>);
+            </>);
     }
 }

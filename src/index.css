@@ -1,7 +1,3 @@
-.App {
-    text-align: center;
-}
-
 .h1 {
     font-family: "Helvetica Neue", serif !important;
     font-size: 1.9rem !important;
@@ -11,7 +7,7 @@
 
 .h2 {
     font-family: "Helvetica Neue", serif !important;
-    font-size: 1.75rem !important;
+    font-size: 1.80rem !important;
     text-align: left !important;
 }
 
@@ -28,30 +24,18 @@
 }
 
 .section-title {
-    font-family: "Helvetica Neue", serif !important;
     font-size: 1.0rem !important;
     font-weight: bold !important;
     text-align: left !important;
 }
 
-.list-group {
-  font-size: 10pt;
-  margin-left: 1em;
-  margin-bottom: 2em;
-}
-
 hr {
-  margin-top: 2em;
+  margin-top: 1.75em;
 }
 
 input {
     width: 85%;
     text-indent: 10px;
-}
-
-.spinner-border {
-    margin-left: 0.50em;
-    margin-top: 0.40em;
 }
 
 img {
@@ -61,6 +45,14 @@ img {
     width: 50%;
 }
 
-.text-right {
+.align-left {
+    text-align: left;
+}
+
+.align-right {
     text-align: right;
+}
+
+.align-center {
+    text-align: center;
 }
