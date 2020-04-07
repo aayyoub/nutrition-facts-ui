@@ -14,14 +14,6 @@ export default class FoodSearch extends Component {
         }
     }
 
-    componentDidMount() {
-        this.focusSearchInput();
-    }
-
-    focusSearchInput() {
-        document.getElementById("typeahead").focus();
-    }
-
     async getSearchTerms(searchTerm) {
         if (searchTerm.length < 2) {
             return;
@@ -52,7 +44,7 @@ export default class FoodSearch extends Component {
             <div id="typeahead" className="typeahead">
                 <AsyncTypeahead
                     labelKey="searchTerm"
-                    placeholder={"Search..."}
+                    placeholder={"Search"}
                     onSearch={searchTerm => this.getSearchTerms(searchTerm)}
                     onChange={selectedSearchTerm => this.selectFood(selectedSearchTerm)}
                     options={this.state.searchTerms}

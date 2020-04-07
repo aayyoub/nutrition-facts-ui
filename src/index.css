@@ -1,5 +1,6 @@
 .h1 {
     font-family: "Helvetica Neue", serif !important;
+    text-decoration: underline;
     font-size: 1.9rem !important;
     font-weight: bold !important;
     text-align: left !important;
@@ -29,6 +30,24 @@
     text-align: left !important;
 }
 
+.highlighted {
+    padding-left:0.5rem;
+    font-style: normal;
+    border-radius: 1em 0 1em 0;
+    text-shadow: 1px 1px 1px #fff;
+    background-image: linear-gradient(-100deg, rgba(255, 250, 150, 0.15), rgba(255, 255, 22, 0.8) 100%, rgba(240, 235, 136, 0.25) );
+}
+
+.slightly-highlighted {
+    background-color: #fbfb72;
+}
+
+.header {
+    float:left;
+    display: inline !important;
+    margin-right: 1.2rem;
+}
+
 hr {
   margin-top: 1.75em;
 }
@@ -55,4 +74,16 @@ img {
 
 .align-center {
     text-align: center;
+}
+
+.serving-size-form {
+    width: 12.5rem;
+    margin-top: 0.10rem;
+    margin-bottom: 0.75rem;
+    float:left;
+}
+
+.serving-size-select {
+    border-color: black;
+    color: #3d3d3d;
 }

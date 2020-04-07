@@ -12,6 +12,7 @@ import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
 import SearchContextResolver from "../../library/util/SearchContextResolver";
 import GetFoodRequest from "../../library/request/GetFoodRequest";
 import LoadingIndicator from '../../component/loading/LoadingIndicator';
+import ServingSize from "../../component/servingsize/ServingSize";
 
 export default class Food extends Component {
     constructor(props) {
@@ -29,6 +30,7 @@ export default class Food extends Component {
             fat: [],
             sterols: [],
             other: [],
+            servingSizes: [],
             isLoading: true,
         };
     }
@@ -37,13 +39,14 @@ export default class Food extends Component {
         this.getFood();
     }
 
-    async getFood() {
-        let searchContextResolver = new SearchContextResolver();
+    async getFood(servingSize) {
+        this.setState({isLoading: true});
 
+        let searchContextResolver = new SearchContextResolver();
         let foodId = searchContextResolver.getFoodId();
 
         let getFoodRequest = new GetFoodRequest();
-        let food = await getFoodRequest.getFood(foodId);
+        let food = await getFoodRequest.getFood(foodId, servingSize);
 
         this.setState({
             longDescription: food.longDescription,
@@ -58,8 +61,14 @@ export default class Food extends Component {
             fat: food.nutrientGroups[4].nutrients,
             sterols: food.nutrientGroups[5].nutrients,
             other: food.nutrientGroups[6].nutrients,
+            servingSizes: food.servingSizes,
             isLoading: false
         });
+    }
+
+    async selectServingSize(event) {
+        let servingSize = event.target.value;
+        this.getFood(servingSize);
     }
 
     render() {
@@ -76,54 +85,61 @@ export default class Food extends Component {
                     <FoodSearch/>
                     <hr/>
                     {
+                        <Row>
+                            {
+                                this.state.longDescription.length > 0 &&
+                                <Col xs={12}>
+                                    <h1 className="h1"><span className="highlighted">{this.state.longDescription}</span></h1>
+                                </Col>
+                            }
+                            {
+                                this.state.formattedCalories.length > 0 &&
+                                <>
+                                    <Col xs={12}>
+                                        <h2 className="h2 header">{this.state.formattedCalories}</h2>
+                                        <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
+                                    </Col>
+                                </>
+                            }
+                        </Row>
+                    }
+                    {
                         this.state.isLoading &&
-                        <LoadingIndicator isLoading={this.state.isLoading}></LoadingIndicator>
+                        <LoadingIndicator isLoading={this.state.isLoading}/>
                     }
                     {
                         !this.state.isLoading &&
-                        <div>
-                            <Row>
-                                <Col>
-                                    {
-                                        this.state.longDescription.length > 0 &&
-                                        <h1 className="h1">{this.state.longDescription}</h1>
-                                    }
-                                    {
-                                        this.state.formattedCalories.length > 0 &&
-                                        <h2 className="h2">{this.state.formattedCalories}</h2>
-                                    }
-                                    {
-                                        this.state.formattedDescription.length > 0 &&
-                                        <p>{this.state.formattedDescription}</p>
-                                    }
-                                </Col>
-                            </Row>
-                        </div>
-                    }
-                    {this.state.caloricPyramid.length !== 0 &&
-                    <Row>
-                        <Col>
-                            <CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>
-                        </Col>
-                    </Row>
-                    }
-                    <Row>
-                        <Col md={6} lg={4}>
-                            <NutritionFacts nutritionFacts={this.state.nutritionFacts}/>
-                        </Col>
-                        <Col md={6} lg={4}>
-                            <NutrientsTable header={"Vitamins"} amount={"Amount"} nutrients={this.state.vitamins}/>
-                            <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
+                        <>
+                            {
+                                this.state.caloricPyramid.length !== 0 &&
+                                <Row>
+                                    <Col>
+                                        <CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>
+                                    </Col>
+                                </Row>
+                            }
+                            {
+                                this.state.vitamins.length !== 0 &&
+                                <Row>
+                                    <Col md={6} lg={4}>
+                                        <NutritionFacts nutritionFacts={this.state.nutritionFacts}/>
+                                    </Col>
+                                    <Col md={6} lg={4}>
+                                        <NutrientsTable header={"Vitamins"} amount={"Amount"} nutrients={this.state.vitamins}/>
+                                        <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
 
-                        </Col>
-                        <Col md={6} lg={4}>
-                            <NutrientsTable header={"Protein"} amount={"Amount"} nutrients={this.state.protein}/>
-                            <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
-                            <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
-                            <NutrientsTable header={"Sterols"} amount={"Amount"} nutrients={this.state.sterols}/>
-                            <NutrientsTable header={"Other"} amount={"Amount"} nutrients={this.state.other}/>
-                        </Col>
-                    </Row>
+                                    </Col>
+                                    <Col md={6} lg={4}>
+                                        <NutrientsTable header={"Protein"} amount={"Amount"} nutrients={this.state.protein}/>
+                                        <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
+                                        <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
+                                        <NutrientsTable header={"Sterols"} amount={"Amount"} nutrients={this.state.sterols}/>
+                                        <NutrientsTable header={"Other"} amount={"Amount"} nutrients={this.state.other}/>
+                                    </Col>
+                                </Row>
+                            }
+                        </>
+                    }
                 </Container>
             </>
         );

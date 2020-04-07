@@ -13,3 +13,18 @@
     font-size: 0.75rem;
     text-align: right;
 }
+
+.nutrient-macronutrient {
+    /*font-weight: bold !important;*/
+}
+
+.nutrient-regular {
+    padding-left: 1.0rem !important;
+    color: #373737;
+}
+
+.nutrient-subcomponent {
+    padding-left: 1.50rem !important;
+    color: #373737;
+    font-style: italic;
+}
