@@ -4,7 +4,6 @@ export default class GetFoodRequest {
             servingSize = 0;
         }
 
-        //let url = "http://localhost:8080/food?foodId=" + foodId + "&servingSize=" + servingSize;
         let url = "https://api.nutritionfacts.io/food?foodId=" + foodId + "&servingSize=" + servingSize;
 
         return await fetch(url)
