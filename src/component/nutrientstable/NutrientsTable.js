@@ -27,7 +27,7 @@ export default class NutrientsTable extends Component {
                     this.props.nutrients.length > 0 &&
                     <div className="nutrients-section">
                         <h3 className="section-title"><span className="highlighted">{this.props.header}</span></h3>
-                        <Table className="nutrients-table" responsive size="sm">
+                        <Table className="nutrients-table" size="sm">
                             <tbody>
                             {
                                 this.props.nutrients.map((nutrient) =>

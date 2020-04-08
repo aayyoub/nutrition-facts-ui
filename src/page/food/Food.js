@@ -18,9 +18,9 @@ export default class Food extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            longDescription: "",
-            formattedDescription: "",
-            formattedCalories: "",
+            name: "",
+            description: "",
+            calories: "",
             nutritionFacts: {},
             caloricPyramid: [],
             vitamins: [],
@@ -48,10 +48,12 @@ export default class Food extends Component {
         let getFoodRequest = new GetFoodRequest();
         let food = await getFoodRequest.getFood(foodId, servingSize);
 
+        debugger;
+
         this.setState({
-            longDescription: food.longDescription,
-            formattedDescription: food.formattedDescription,
-            formattedCalories: food.formattedCalories,
+            name: food.name,
+            description: food.description,
+            calories: food.calories,
             nutritionFacts: food.nutritionFacts,
             caloricPyramid: food.caloricPyramid,
             vitamins: food.nutrientGroups[0].nutrients,
@@ -76,7 +78,7 @@ export default class Food extends Component {
             <>
                 <Analytics/>
                 <Container>
-                    <Seo description={this.state.formattedDescription}/>
+                    <Seo description={this.state.description}/>
                     <Row>
                         <Col sm={2}>
                             <Logo/>
@@ -87,16 +89,16 @@ export default class Food extends Component {
                     {
                         <Row>
                             {
-                                this.state.longDescription.length > 0 &&
+                                this.state.description.length > 0 &&
                                 <Col xs={12}>
-                                    <h1 className="h1"><span className="highlighted">{this.state.longDescription}</span></h1>
+                                    <h1 className="h1"><span className="highlighted">{this.state.description}</span></h1>
                                 </Col>
                             }
                             {
-                                this.state.formattedCalories.length > 0 &&
+                                this.state.calories.length > 0 &&
                                 <>
                                     <Col xs={12}>
-                                        <h2 className="h2 header">{this.state.formattedCalories}</h2>
+                                        <h2 className="h2 header">{this.state.calories}</h2>
                                         <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
                                     </Col>
                                 </>
