@@ -48,8 +48,6 @@ export default class Food extends Component {
         let getFoodRequest = new GetFoodRequest();
         let food = await getFoodRequest.getFood(foodId, servingSize);
 
-        debugger;
-
         this.setState({
             name: food.name,
             description: food.description,

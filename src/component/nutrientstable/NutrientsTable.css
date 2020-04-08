@@ -35,14 +35,11 @@
 
 .nutrient-collapsed {
     visibility: collapse;
-    opacity: 0;
-    transition: opacity 0ms;
+    display: none;
 }
 
 .nutrient-visible {
     visibility: visible;
-    opacity: 1;
-    transition: opacity 700ms;
 }
 
 .show-more {
