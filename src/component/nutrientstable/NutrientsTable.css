@@ -1,9 +1,9 @@
 .nutrients-section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .nutrients-table {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .table-data-nutrient {
@@ -33,12 +33,30 @@
     font-style: italic;
 }
 
+.nutrient-collapsed {
+    visibility: collapse;
+    opacity: 0;
+    transition: opacity 0ms;
+}
+
+.nutrient-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 700ms;
+}
+
 .show-more {
     font-family: "Helvetica Neue", serif;
     font-size: 0.75rem;
     color: #373737;
     text-align: right;
+    float: right;
     font-style: italic;
+    text-decoration: underline;
+}
+
+.btn:hover {
+    color: #373737 !important;
     text-decoration: underline;
 }
 

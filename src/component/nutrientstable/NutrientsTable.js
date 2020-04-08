@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 import './NutrientsTable.css'
 
 export default class NutrientsTable extends Component {
@@ -12,7 +13,11 @@ export default class NutrientsTable extends Component {
     }
 
     toggleShowDetails() {
-        this.setState({showDetails: !this.state.showDetails});
+        if (this.state.showDetails) {
+            this.setState({showDetails: false, showDetailsText: "Show Details"});
+        } else {
+            this.setState({showDetails: true, showDetailsText: "Hide Details"});
+        }
     }
 
     render() {
@@ -28,8 +33,8 @@ export default class NutrientsTable extends Component {
                                 this.props.nutrients.map((nutrient) =>
                                     <>
                                         {
-                                            nutrient.subcomponent && this.state.showDetails &&
-                                            <tr>
+                                            nutrient.subcomponent &&
+                                            <tr className={!this.state.showDetails ? "nutrient-collapsed" : "nutrient-visible"}>
                                                 <td className="table-data-nutrient nutrient-subcomponent">{nutrient.description}</td>
                                                 <td className="table-data-value">{nutrient.valueRounded} {nutrient.unit}</td>
                                                 <td className="table-data-value">{nutrient.percentDailyValueFormatted}</td>
@@ -57,8 +62,7 @@ export default class NutrientsTable extends Component {
                         </Table>
                         {
                             this.props.nutrients.some((nutrient) => nutrient.subcomponent) &&
-                                <p className="show-more" onClick={this.toggleShowDetails.bind(this)}>{this.state.showDetailsText}</p>
-
+                            <Button variant="link" className="show-more" size="sm" onClick={this.toggleShowDetails.bind(this)}>{this.state.showDetailsText}</Button>
                         }
                     </div>
                 }
