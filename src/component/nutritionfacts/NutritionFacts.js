@@ -9,11 +9,12 @@ export default class NutritionFacts extends Component {
                 {this.props.nutritionFacts.caloriesValueFormatted &&
                 <div className="nutrition-facts-section">
                     <div className="nutrition-facts-header-section">
-                        <ReactFitText compressor={0.71}>
+                        <ReactFitText compressor={.67}>
                             <h1 className="nutrition-facts-title">Nutrition Facts</h1>
                         </ReactFitText>
                         <h2 className="nutrition-facts-servings-per-container">1 serving per container</h2>
-                        <p className="nutrition-facts-serving-size">Serving size 100 grams</p>
+                        <p className="nutrition-facts-serving-size">Serving size<span className="nutrition-facts-serving-size-value">100 grams</span>
+                        </p>
                     </div>
 
                     <div className="nutrition-facts-calorie-section">

@@ -6,13 +6,13 @@ import FoodSearch from "../../component/foodsearch/FoodSearch";
 import Analytics from "../../component/analytics/Analytics";
 import Seo from "../../component/seo/Seo";
 import Logo from "../../component/logo/Logo";
+import SearchContextResolver from "../../library/util/SearchContextResolver";
+import GetFoodRequest from "../../library/request/GetFoodRequest";
+import ServingSize from "../../component/servingsize/ServingSize";
+import LoadingIndicator from "../../component/loading/LoadingIndicator";
 import CaloricPyramid from "../../component/caloricpyramid/CaloricPyramid";
 import NutritionFacts from "../../component/nutritionfacts/NutritionFacts";
 import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
-import SearchContextResolver from "../../library/util/SearchContextResolver";
-import GetFoodRequest from "../../library/request/GetFoodRequest";
-import LoadingIndicator from '../../component/loading/LoadingIndicator';
-import ServingSize from "../../component/servingsize/ServingSize";
 
 export default class Food extends Component {
     constructor(props) {
@@ -85,60 +85,51 @@ export default class Food extends Component {
                     <FoodSearch/>
                     <hr/>
                     {
+
+                        this.state.description.length > 0 &&
                         <Row>
-                            {
-                                this.state.description.length > 0 &&
-                                <Col xs={12}>
-                                    <h1 className="h1"><span className="highlighted">{this.state.description}</span></h1>
-                                </Col>
-                            }
-                            {
-                                this.state.calories.length > 0 &&
-                                <>
-                                    <Col xs={12}>
-                                        <h2 className="h2 header">{this.state.calories}</h2>
-                                        <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
-                                    </Col>
-                                </>
-                            }
+                            <Col xs={12}>
+                                <h1 className="h1"><span className="highlighted">{this.state.description}</span></h1>
+                            </Col>
                         </Row>
                     }
                     {
-                        this.state.isLoading &&
-                        <LoadingIndicator isLoading={this.state.isLoading}/>
+                        this.state.calories.length > 0 &&
+                        <Row>
+                            <Col xs={12}>
+                                <h2 className="h2 header">{this.state.calories}</h2>
+                                <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
+                            </Col>
+                        </Row>
                     }
                     {
-                        !this.state.isLoading &&
-                        <>
-                            {
-                                this.state.caloricPyramid.length !== 0 &&
+                        this.state.isLoading
+                            ?
+                            <LoadingIndicator isLoading={this.state.isLoading}/>
+                            :
+                            <>
                                 <Row>
                                     <Col>
                                         <CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>
                                     </Col>
                                 </Row>
-                            }
-                            {
-                                this.state.vitamins.length !== 0 &&
                                 <Row>
                                     <Col md={6} lg={4}>
                                         <NutritionFacts nutritionFacts={this.state.nutritionFacts}/>
                                     </Col>
                                     <Col md={6} lg={4}>
                                         <NutrientsTable header={"Vitamins"} amount={"Amount"} nutrients={this.state.vitamins}/>
-                                        <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
-
-                                    </Col>
-                                    <Col md={6} lg={4}>
                                         <NutrientsTable header={"Protein"} amount={"Amount"} nutrients={this.state.protein}/>
                                         <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
                                         <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
+                                    </Col>
+                                    <Col md={6} lg={4}>
+                                        <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
                                         <NutrientsTable header={"Sterols"} amount={"Amount"} nutrients={this.state.sterols}/>
                                         <NutrientsTable header={"Other"} amount={"Amount"} nutrients={this.state.other}/>
                                     </Col>
                                 </Row>
-                            }
-                        </>
+                            </>
                     }
                 </Container>
             </>

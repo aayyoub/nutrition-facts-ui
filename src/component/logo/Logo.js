@@ -5,9 +5,7 @@ import './Logo.css'
 export default class Logo extends Component {
     render() {
         return (
-            <a href="https://www.nutritionfacts.io/">
-                <img className="logo" src={logo} alt="NutritionFacts.io Logo"/>
-            </a>
+            <h1 className="logo">NutritionFacts<span className="domain">.io</span></h1>
         );
     }
 }

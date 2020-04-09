@@ -5,6 +5,7 @@ import './CaloricPyramid.css';
 export default class CaloricPyramid extends Component {
     render() {
         return (
+            this.props.caloricPyramid.length !== 0 &&
             <ListGroup className="caloric-pyramid" horizontal variant="caloric-pyramid">
                 {
                     this.props.caloricPyramid.carbohydratePercentage > 0 &&

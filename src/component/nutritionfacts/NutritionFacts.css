@@ -11,14 +11,14 @@ th, td {
     font-weight: normal;
     text-align: left;
     padding: 0.25rem 0;
-    border-top: 1px solid black;
+    border-top: 0.05rem solid black;
     white-space: nowrap;
 }
 
 .nutrition-facts-section {
-    border: .05em solid black;
+    border: .15em solid black;
     width: 99%;
-    padding: 0 .4rem .4rem 0.4rem;
+    padding: 0 .3rem .1rem .3rem;
     margin-bottom: 2.0rem;
     float: left;
 }
@@ -26,30 +26,40 @@ th, td {
 .nutrition-facts-header-section {
     padding: 0 0 0.2rem 0;
     margin: 0 0 0.0rem 0;
-    border-bottom: 0.7rem solid black;
+    border-bottom: 0.9rem solid black;
 }
 
 .nutrition-facts-title {
-    font-family: "Helvetica Neue", serif;
-    font-weight: bold;
+    font-family: 'Neue Montreal', sans-serif;
+    font-weight: 900;
     text-align: center;
     margin: 0;
-    border-bottom: 0.10rem solid black;
+    border-bottom: .05rem solid black;
 }
 
 .nutrition-facts-servings-per-container {
-    font-family: "Helvetica Neue", serif;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
     text-align: left;
     margin: 0;
 }
 
 .nutrition-facts-serving-size {
-    font-family: "Helvetica Neue", serif;
-    font-size: 0.95rem;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
     text-align: left;
     margin: 0;
+}
+
+.nutrition-facts-serving-size-value {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: right;
+    margin: 0;
+    float: right;
 }
 
 .nutrition-facts-calorie-section {
@@ -58,15 +68,16 @@ th, td {
 }
 
 .nutrition-facts-amount-per-serving {
-    font-family: "Helvetica Neue", serif;
+    font-family: "Helvetica Neue", sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
     text-align: left;
+    margin-top: 0.4rem;
 }
 
 .nutrition-facts-calories {
-    font-family: "Helvetica Neue", serif;
-    font-size: 2.3rem;
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 2.4rem;
     font-weight: bold;
     text-align: left;
     float: left;
@@ -74,8 +85,8 @@ th, td {
 }
 
 .nutrition-facts-calories-value {
-    font-family: "Helvetica Neue", serif;
-    font-size: 2.3rem;
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 2.4rem;
     font-weight: bold;
     text-align: right;
     margin: 0.05rem;
@@ -86,10 +97,15 @@ th, td {
 }
 
 .nutrition-facts-daily-value-text {
-    font-family: "Helvetica Neue", serif;
+    font-family: "Helvetica Neue", sans-serif;
     text-align: right;
     font-weight: bold;
     font-size: 1em;
+}
+
+.nutrition-facts-bold-label {
+    font-weight: bold;
+    text-align:left;
 }
 
 .nutrition-facts-percentage-value {

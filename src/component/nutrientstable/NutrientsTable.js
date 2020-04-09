@@ -62,7 +62,7 @@ export default class NutrientsTable extends Component {
                         </Table>
                         {
                             this.props.nutrients.some((nutrient) => nutrient.subcomponent) &&
-                            <Button variant="link" className="show-more" size="sm" onClick={this.toggleShowDetails.bind(this)}>{this.state.showDetailsText}</Button>
+                            <Button variant="link" className="show-more" onClick={this.toggleShowDetails.bind(this)}>{this.state.showDetailsText}</Button>
                         }
                     </div>
                 }
