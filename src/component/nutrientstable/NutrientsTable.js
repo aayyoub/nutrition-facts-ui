@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import './NutrientsTable.css'
+import NutrientPopover from "../nutrientpopover/NutrientPopover";
 
 export default class NutrientsTable extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class NutrientsTable extends Component {
                     this.props.nutrients.length > 0 &&
                     <div className="nutrients-section">
                         <h3 className="section-title"><span className="highlighted">{this.props.header}</span></h3>
-                        <Table className="nutrients-table" size="sm">
+                        <Table variant="nutrient">
                             <tbody>
                             {
                                 this.props.nutrients.map((nutrient) =>
@@ -35,7 +36,7 @@ export default class NutrientsTable extends Component {
                                         {
                                             nutrient.subcomponent &&
                                             <tr className={!this.state.showDetails ? "nutrient-collapsed" : "nutrient-visible"}>
-                                                <td className="table-data-nutrient nutrient-subcomponent">{nutrient.description}</td>
+                                                <td className="table-data-nutrient-label nutrient-subcomponent">{nutrient.commonName}</td>
                                                 <td className="table-data-value">{nutrient.valueRounded} {nutrient.unit}</td>
                                                 <td className="table-data-value">{nutrient.percentDailyValueFormatted}</td>
                                             </tr>
@@ -43,7 +44,7 @@ export default class NutrientsTable extends Component {
                                         {
                                             nutrient.macronutrient &&
                                             <tr>
-                                                <td className="table-data-nutrient nutrient-macronutrient">{nutrient.description}</td>
+                                                <td className="table-data-nutrient-label nutrient-macronutrient">{nutrient.commonName}</td>
                                                 <td className="table-data-value">{nutrient.valueRounded} {nutrient.unit}</td>
                                                 <td className="table-data-value">{nutrient.percentDailyValueFormatted}</td>
                                             </tr>
@@ -51,7 +52,7 @@ export default class NutrientsTable extends Component {
                                         {
                                             !nutrient.subcomponent && !nutrient.macronutrient &&
                                             <tr>
-                                                <td className="table-data-nutrient nutrient-regular">{nutrient.description}</td>
+                                                <td className="table-data-nutrient-label nutrient-regular"><NutrientPopover nutrient={nutrient}/></td>
                                                 <td className="table-data-value">{nutrient.valueRounded} {nutrient.unit}</td>
                                                 <td className="table-data-value">{nutrient.percentDailyValueFormatted}</td>
                                             </tr>
@@ -62,7 +63,7 @@ export default class NutrientsTable extends Component {
                         </Table>
                         {
                             this.props.nutrients.some((nutrient) => nutrient.subcomponent) &&
-                            <Button variant="link" className="show-more" onClick={this.toggleShowDetails.bind(this)}>{this.state.showDetailsText}</Button>
+                            <Button variant="show-details" onClick={this.toggleShowDetails.bind(this)}>{this.state.showDetailsText}</Button>
                         }
                     </div>
                 }

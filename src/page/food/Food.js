@@ -119,12 +119,13 @@ export default class Food extends Component {
                                     </Col>
                                     <Col md={6} lg={4}>
                                         <NutrientsTable header={"Vitamins"} amount={"Amount"} nutrients={this.state.vitamins}/>
+                                        <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
                                         <NutrientsTable header={"Protein"} amount={"Amount"} nutrients={this.state.protein}/>
-                                        <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
-                                        <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
+
                                     </Col>
                                     <Col md={6} lg={4}>
-                                        <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
+                                        <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
+                                        <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
                                         <NutrientsTable header={"Sterols"} amount={"Amount"} nutrients={this.state.sterols}/>
                                         <NutrientsTable header={"Other"} amount={"Amount"} nutrients={this.state.other}/>
                                     </Col>

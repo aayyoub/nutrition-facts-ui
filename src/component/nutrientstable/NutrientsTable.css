@@ -1,35 +1,33 @@
 .nutrients-section {
-    margin-bottom: 4rem;
-}
-
-.nutrients-table {
-    margin-bottom: 0.25rem;
-}
-
-.table-data-nutrient {
     font-family: "Helvetica Neue", serif;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    color: #373737;
+    margin-bottom: 3rem;
+}
+
+.table-nutrient {
+    margin-bottom: 0;
+}
+
+.table-nutrient td {
+    padding: 0.30rem;
+    border-top: 0.05rem solid #373737;
+}
+
+.table-data-nutrient-label {
     text-align: left;
 }
 
 .table-data-value {
-    font-family: "Helvetica Neue", serif;
-    font-size: 0.75rem;
     text-align: right;
-}
-
-.nutrient-macronutrient {
-    /*font-weight: bold !important;*/
 }
 
 .nutrient-regular {
     padding-left: 1.0rem !important;
-    color: #373737;
 }
 
 .nutrient-subcomponent {
     padding-left: 1.50rem !important;
-    color: #373737;
     font-style: italic;
 }
 
@@ -42,7 +40,7 @@
     visibility: visible;
 }
 
-.show-more {
+.btn-show-details {
     font-family: "Helvetica Neue", serif;
     font-size: 0.75rem;
     color: #373737;
@@ -52,8 +50,9 @@
     text-decoration: underline;
 }
 
-.btn:hover {
-    color: #373737 !important;
+.btn-show-details:focus,.btn-show-details:active,.btn-show-details:hover {
     text-decoration: underline;
+    outline: none !important;
+    box-shadow: none;
 }
 

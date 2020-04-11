@@ -50,8 +50,8 @@ img {
     font-family: 'Neue Montreal', sans-serif;
     font-size: 2.2rem;
     font-weight: bold;
-    font-style: normal;
     text-decoration: underline;
+    font-style: normal;
     text-align: left;
 }
 
@@ -79,14 +79,6 @@ img {
     text-align: left;
 }
 
-.logo {
-    font-family: 'Neue Montreal', sans-serif;
-    font-size: 1.50rem;
-    font-weight: bold;
-    font-style: normal;
-    text-align: left;
-}
-
 .domain {
     color: #a6a6a6;
 }
@@ -98,11 +90,9 @@ img {
 }
 
 .highlighted {
-    /*padding-left:0.5rem;*/
-    /*font-style: normal;*/
-    /*border-radius: 1em 0 1em 0;*/
-    /*text-shadow: 1px 1px 1px #fff;*/
-    /*background-image: linear-gradient(-100deg, rgba(255, 250, 150, 0.15), rgba(255, 255, 22, 0.8) 100%, rgba(240, 235, 136, 0.25) );*/
+    /*background-color: #b6ddff;*/
+    /*border-radius: 0.25rem;*/
+    /*padding: 0.15rem 0.20rem 0.15rem 0.20rem;*/
 }
 
 .slightly-highlighted {
@@ -114,8 +104,6 @@ img {
     display: inline !important;
     margin-right: 1.2rem;
 }
-
-
 
 .align-left {
     text-align: left;
