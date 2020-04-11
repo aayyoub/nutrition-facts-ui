@@ -1,5 +1,4 @@
 .nutrients-section {
-    font-family: "Helvetica Neue", serif;
     font-size: 0.7rem;
     color: #373737;
     margin-bottom: 3rem;
@@ -41,7 +40,7 @@
 }
 
 .btn-show-details {
-    font-family: "Helvetica Neue", serif;
+    padding: 0.25rem;
     font-size: 0.75rem;
     color: #373737;
     text-align: right;

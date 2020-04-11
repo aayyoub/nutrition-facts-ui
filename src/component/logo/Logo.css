@@ -12,6 +12,10 @@
     margin-bottom: 0;
 }
 
+.domain {
+    color: #a6a6a6;
+}
+
 .logo-tagline {
     font-family: 'Neue Montreal', sans-serif;
     font-weight: 300;

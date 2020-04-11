@@ -7,6 +7,7 @@
 
 .btn-nutrient-info svg {
     vertical-align: unset;
+    margin-left: 0rem;
 }
 
 .btn-nutrient-info:focus,.btn-nutrient-info:active,.btn-nutrient-info:hover {
@@ -24,7 +25,6 @@
 }
 
 .benefit-text {
-    font-family: "Helvetica Neue", serif;
     font-size: 0.7rem;
     color: #373737;
     margin-right: 1rem;
@@ -36,10 +36,8 @@
 }
 
 .external-url-icon {
-    margin-left: 0.60rem;
+    margin-left: 0.80rem;
     color: #373737;
-    text-align: right;
-    float:right;
 }
 
 .benefit-icon {

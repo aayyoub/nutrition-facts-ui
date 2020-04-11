@@ -9,6 +9,6 @@
 }
 
 .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #555555;
-    opacity: 1; /* Firefox */
+    color: #373737;
+    opacity: 1;
 }

@@ -42,9 +42,7 @@ export default class NutrientPopover extends Component {
                     this.props.nutrient.goodFor || this.props.nutrient.badFor
                         ?
                         <OverlayTrigger trigger="hover" placement="bottom" overlay={popover}>
-                            <span>{this.props.nutrient.commonName}
-                                <MdInfoOutline className="details-icon"/>
-                            </span>
+                            <span>{this.props.nutrient.commonName}</span>
                         </OverlayTrigger>
                         :
                         <span>{this.props.nutrient.commonName}</span>
