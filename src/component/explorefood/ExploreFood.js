@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import GetExploreFoodRequest from "../../library/request/GetExploreFoodRequest";
 import LoadingIndicator from "../loading/LoadingIndicator";
 import './ExploreFood.css';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default class ExploreFood extends Component {
     constructor(props) {
@@ -32,14 +34,12 @@ export default class ExploreFood extends Component {
                 <LoadingIndicator isLoading={this.state.isLoading}></LoadingIndicator>
                 {
                     !this.state.isLoading &&
-                    <div>
-                        <h1 className="section-title">Explore Food</h1>
-                        {
+                    <>{
                             this.state.food.map((food) =>
                                 <a href={food.url}><p>{food.foodDescription}</p></a>
                             )
                         }
-                    </div>
+                    </>
                 }
             </>
         );

@@ -2,13 +2,14 @@
     margin-bottom: 1.5rem;
 }
 
-.form-control {
+.typeahead input {
     border-color: black;
     color: black;
     text-indent: 0.2rem;
 }
 
-.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.typeahead::placeholder {
     color: #373737;
     opacity: 1;
 }
+

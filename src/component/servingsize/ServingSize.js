@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Form from "react-bootstrap/Form";
 import $ from "jquery";
+import './ServingSize.css'
 
 export default class ServingSize extends Component {
     selectServingSize(event) {

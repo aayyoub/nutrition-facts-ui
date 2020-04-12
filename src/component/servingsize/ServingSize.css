@@ -1,0 +1,13 @@
+.serving-size-form {
+    border-color: black;
+    width: 12.5rem;
+    margin-top: 0.40rem;
+    margin-bottom: 0.75rem;
+    float:left;
+}
+
+.serving-size-select {
+    border-color: black;
+    color: black;
+    text-indent: 0.2rem;
+}

@@ -1,13 +1,8 @@
-body {
-    font-size: small;
-    line-height: 1.3;
-}
-
 p {
     margin: 0;
 }
 
-th, td {
+.nutrition-facts-section th, td {
     font-weight: normal;
     text-align: left;
     padding: 0.25rem 0;
@@ -16,6 +11,7 @@ th, td {
 }
 
 .nutrition-facts-section {
+    background-color:white;
     border: .15em solid black;
     width: 99%;
     padding: 0 .3rem .1rem .3rem;
@@ -90,6 +86,11 @@ th, td {
 
 .nutrition-facts-table {
     width: 100%;
+}
+
+body {
+font-size: small;
+line-height: 1.3;
 }
 
 .nutrition-facts-daily-value-text {

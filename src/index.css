@@ -50,6 +50,10 @@
     font-family: 'Neue Montreal', sans-serif;
 }
 
+body {
+    /*background-color: #FBFBFB;*/
+}
+
 hr {
     margin: 1rem;
 }
@@ -64,6 +68,12 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+form {
+    border-color: black;
+    color: black;
+    text-indent: 0.2rem;
 }
 
 .h1 {
@@ -105,13 +115,24 @@ img {
 }
 
 .highlighted {
-    /*background-color: #b6ddff;*/
+    /*background-color: #E7E7E7;*/
     /*border-radius: 0.25rem;*/
     /*padding: 0.15rem 0.20rem 0.15rem 0.20rem;*/
 }
 
+.navbar-colored-navbar {
+    color:white;
+    /*background-color: #668586;*/
+    background-color: black;
+    margin-bottom: 2rem;
+}
+
+.navbar-colored-navbar a {
+    color: black;
+}
+
 .slightly-highlighted {
-    background-color: #fbfb72;
+    background-color: #ff3f3f;
 }
 
 .header {
@@ -130,11 +151,4 @@ img {
 
 .align-center {
     text-align: center;
-}
-
-.serving-size-form {
-    width: 12.5rem;
-    margin-top: 0.40rem;
-    margin-bottom: 0.75rem;
-    float:left;
 }

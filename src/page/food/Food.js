@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import FoodSearch from "../../component/foodsearch/FoodSearch";
 import Analytics from "../../component/analytics/Analytics";
 import Seo from "../../component/seo/Seo";
-import Logo from "../../component/logo/Logo";
 import SearchContextResolver from "../../library/util/SearchContextResolver";
 import GetFoodRequest from "../../library/request/GetFoodRequest";
 import ServingSize from "../../component/servingsize/ServingSize";
@@ -13,6 +12,7 @@ import LoadingIndicator from "../../component/loading/LoadingIndicator";
 import CaloricPyramid from "../../component/caloricpyramid/CaloricPyramid";
 import NutritionFacts from "../../component/nutritionfacts/NutritionFacts";
 import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
+import Navigation from "../../component/navigation/Navigation";
 
 export default class Food extends Component {
     constructor(props) {
@@ -75,15 +75,10 @@ export default class Food extends Component {
         return (
             <>
                 <Analytics/>
+                <Navigation/>
                 <Container>
-                    <Seo description={this.state.description}/>
-                    <Row>
-                        <Col sm={2}>
-                            <Logo/>
-                        </Col>
-                    </Row>
                     <FoodSearch/>
-                    <hr/>
+                    <Seo description={this.state.description}/>
                     {
 
                         this.state.description.length > 0 &&
