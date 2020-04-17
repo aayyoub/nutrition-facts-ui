@@ -13,3 +13,9 @@
     opacity: 1;
 }
 
+.dropdown-item {
+    font-size:0.9rem;
+    font-weight: bold;
+    color: black;
+}
+

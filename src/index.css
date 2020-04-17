@@ -50,10 +50,6 @@
     font-family: 'Neue Montreal', sans-serif;
 }
 
-body {
-    /*background-color: #FBFBFB;*/
-}
-
 hr {
     margin: 1rem;
 }
@@ -83,6 +79,7 @@ form {
     text-decoration: underline;
     font-style: normal;
     text-align: left;
+    margin-bottom: 0.75rem;
 }
 
 .h2 {
@@ -91,6 +88,7 @@ form {
     font-style: italic;
     font-size: 2.2rem;
     text-align: left;
+    margin-bottom: 0.75rem;
 }
 
 .h3 {
@@ -99,6 +97,7 @@ form {
     font-style: normal;
     font-size: 1.6rem;
     text-align: left;
+    margin-bottom: 0.75rem;
 }
 
 .h4 {
@@ -106,6 +105,7 @@ form {
     font-style: normal;
     font-size: 1.0rem;
     text-align: left;
+    margin-bottom: 0.75rem;
 }
 
 .section-title {
@@ -122,8 +122,7 @@ form {
 
 .navbar-colored-navbar {
     color:white;
-    /*background-color: #668586;*/
-    background-color: black;
+    background-color: #202020;
     margin-bottom: 2rem;
 }
 

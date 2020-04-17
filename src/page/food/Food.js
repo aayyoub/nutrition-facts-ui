@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import FoodSearch from "../../component/foodsearch/FoodSearch";
 import Analytics from "../../component/analytics/Analytics";
 import Seo from "../../component/seo/Seo";
-import SearchContextResolver from "../../library/util/SearchContextResolver";
 import GetFoodRequest from "../../library/request/GetFoodRequest";
 import ServingSize from "../../component/servingsize/ServingSize";
 import LoadingIndicator from "../../component/loading/LoadingIndicator";
@@ -13,14 +12,18 @@ import CaloricPyramid from "../../component/caloricpyramid/CaloricPyramid";
 import NutritionFacts from "../../component/nutritionfacts/NutritionFacts";
 import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
 import Navigation from "../../component/navigation/Navigation";
+import NutritionStatements from "../../component/nutritionalstatements/NutritionStatements";
 
 export default class Food extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            foodName: props.foodName,
+            servingSize: props.servingSize,
             name: "",
             description: "",
             calories: "",
+            nutritionStatements: [],
             nutritionFacts: {},
             caloricPyramid: [],
             vitamins: [],
@@ -39,19 +42,17 @@ export default class Food extends Component {
         this.getFood();
     }
 
-    async getFood(servingSize) {
+    async getFood() {
         this.setState({isLoading: true});
 
-        let searchContextResolver = new SearchContextResolver();
-        let foodId = searchContextResolver.getFoodId();
-
         let getFoodRequest = new GetFoodRequest();
-        let food = await getFoodRequest.getFood(foodId, servingSize);
+        let food = await getFoodRequest.getFood(this.state.foodName, this.state.servingSize);
 
         this.setState({
             name: food.name,
             description: food.description,
             calories: food.calories,
+            nutritionStatements: food.nutritionStatements,
             nutritionFacts: food.nutritionFacts,
             caloricPyramid: food.caloricPyramid,
             vitamins: food.nutrientGroups[0].nutrients,
@@ -67,8 +68,7 @@ export default class Food extends Component {
     }
 
     async selectServingSize(event) {
-        let servingSize = event.target.value;
-        this.getFood(servingSize);
+        this.setState({servingSize: event.target.value}, this.getFood);
     }
 
     render() {
@@ -104,21 +104,26 @@ export default class Food extends Component {
                             :
                             <>
                                 <Row>
-                                    <Col>
+                                    <Col sm={12}>
                                         <CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>
                                     </Col>
                                 </Row>
+                                {/*<Row>*/}
+                                {/*    <Col sm={12}>*/}
+                                {/*        <NutritionStatements nutritionStatements={this.state.nutritionStatements}/>*/}
+                                {/*    </Col>*/}
+                                {/*</Row>*/}
                                 <Row>
                                     <Col md={6} lg={4}>
                                         <NutritionFacts nutritionFacts={this.state.nutritionFacts}/>
                                     </Col>
-                                    <Col md={6} lg={4}>
+                                    <Col md={12} lg={4}>
                                         <NutrientsTable header={"Vitamins"} amount={"Amount"} nutrients={this.state.vitamins}/>
                                         <NutrientsTable header={"Minerals"} amount={"Amount"} nutrients={this.state.minerals}/>
                                         <NutrientsTable header={"Protein"} amount={"Amount"} nutrients={this.state.protein}/>
 
                                     </Col>
-                                    <Col md={6} lg={4}>
+                                    <Col md={12} lg={4}>
                                         <NutrientsTable header={"Carbohydrates"} amount={"Amount"} nutrients={this.state.carbohydrates}/>
                                         <NutrientsTable header={"Fats and Fatty Acids"} amount={"Amount"} nutrients={this.state.fat}/>
                                         <NutrientsTable header={"Sterols"} amount={"Amount"} nutrients={this.state.sterols}/>

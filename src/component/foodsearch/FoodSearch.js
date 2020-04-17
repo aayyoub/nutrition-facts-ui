@@ -3,6 +3,7 @@ import {AsyncTypeahead} from "react-bootstrap-typeahead";
 import GetSearchTermsRequest from "../../library/request/GetSearchTermsRequest";
 import SearchRedirect from "../../library/util/SearchRedirect";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
+import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
 import './FoodSearch.css'
 
 export default class FoodSearch extends Component {
@@ -39,10 +40,6 @@ export default class FoodSearch extends Component {
         return (
             <div id="search-typeahead" className="typeahead">
                 <AsyncTypeahead
-                    filterBy={() => {
-                        return true;
-                    }}
-                    minLength={2}
                     labelKey="searchTerm"
                     placeholder={"Search"}
                     onSearch={searchTerm => this.getSearchTerms(searchTerm)}
@@ -50,6 +47,9 @@ export default class FoodSearch extends Component {
                     options={this.state.searchTerms}
                     isLoading={this.state.isLoading}
                     clearButton={true}
+                    minLength={2}
+                    caseSensitive={false}
+                    filterBy={() => {return true;}}
                 />
             </div>
         );
