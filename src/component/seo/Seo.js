@@ -6,7 +6,7 @@ export default class Seo extends Component {
         return (
             <div>
                 {
-                    this.props.seoTags.title && this.props.seoTags.description
+                    this.props.seoTags && this.props.seoTags.title && this.props.seoTags.description
                         ?
                         <Helmet>
                             <title>{this.props.seoTags.title}</title>
