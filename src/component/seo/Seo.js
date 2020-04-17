@@ -5,18 +5,22 @@ export default class Seo extends Component {
     render() {
         return (
             <div>
-                {this.props.description.length > 0
-                    ?
-                    <Helmet>
-                        <title>{this.props.description}</title>
-                        <meta name="description" content={this.props.description}/>
-                    </Helmet>
-                    :
-                    <Helmet>
-                        <title>NutritionFacts.io | Nutrition Facts and Information</title>
-                        <meta name="description"
-                              content={"Nutrition facts and information. Check calories, carbs, and fat values, including vitamins and minerals with percent daily values."}/>
-                    </Helmet>
+                {
+                    this.props.seoTags.title && this.props.seoTags.description
+                        ?
+                        <Helmet>
+                            <title>{this.props.seoTags.title}</title>
+                            <meta name="description" content={this.props.seoTags.description}/>
+                        </Helmet>
+                        :
+                        <Helmet>
+                            <title>Nutrition Facts and Calories | NutritionFacts.io</title>
+                            <meta name="description"
+                                  content={"Nutrition facts and calories. " +
+                                  "Protein, carbs, and fat information for weight loss, " +
+                                  "including nutrient values for vitamins, minerals, and recommended daily intake. " +
+                                  "Trusted nutrition database for healthy eating."}/>
+                        </Helmet>
                 }
             </div>
         )

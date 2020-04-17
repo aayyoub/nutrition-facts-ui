@@ -34,6 +34,7 @@ export default class Food extends Component {
             sterols: [],
             other: [],
             servingSizes: [],
+            seoTags: {},
             isLoading: true,
         };
     }
@@ -63,6 +64,7 @@ export default class Food extends Component {
             sterols: food.nutrientGroups[5].nutrients,
             other: food.nutrientGroups[6].nutrients,
             servingSizes: food.servingSizes,
+            seoTags: food.seoTags,
             isLoading: false
         });
     }
@@ -78,7 +80,7 @@ export default class Food extends Component {
                 <Navigation/>
                 <Container>
                     <FoodSearch/>
-                    <Seo description={this.state.description}/>
+                    <Seo seoTags={this.state.seoTags}/>
                     {
 
                         this.state.description.length > 0 &&
