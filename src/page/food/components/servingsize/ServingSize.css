@@ -1,9 +1,13 @@
 .serving-size-form {
     border-color: black;
     width: 12.5rem;
-    margin-top: 0.40rem;
+    margin-top: 0.50rem;
     margin-bottom: 0.50rem;
     float:left;
+}
+
+.serving-size-form .form-group {
+    margin-bottom: 0;
 }
 
 .serving-size-select {

@@ -72,46 +72,68 @@ form {
     text-indent: 0.2rem;
 }
 
-.h1 {
+h1 {
     font-family: 'Neue Montreal', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.25rem;
     font-weight: bold;
-    text-decoration: underline;
     font-style: normal;
     text-align: left;
+    margin-top: 0.75rem;
     margin-bottom: 0.75rem;
 }
 
-.h2 {
+h2 {
     font-family: 'Neue Montreal', sans-serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 2.2rem;
-    text-align: left;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 0.75rem;
     margin-bottom: 0.75rem;
 }
 
-.h3 {
+h3 {
     font-family: 'Neue Montreal', sans-serif;
     font-weight: normal;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-align: left;
+    margin-top: 0.75rem;
     margin-bottom: 0.75rem;
 }
 
-.h4 {
+h4 {
     font-weight: normal;
     font-style: normal;
     font-size: 1.0rem;
     text-align: left;
+    margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+    outline: none !important;
+    box-shadow: none;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .section-title {
     font-size: 1.0rem !important;
     font-weight: bold !important;
     text-align: left !important;
+}
+
+.section-separator {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .highlighted {
@@ -123,7 +145,7 @@ form {
 .navbar-colored-navbar {
     color:white;
     background-color: #202020;
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
 }
 
 .navbar-colored-navbar a {

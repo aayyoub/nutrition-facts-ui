@@ -4,9 +4,9 @@ import GetSearchTermsRequest from "../../library/request/GetSearchTermsRequest";
 import SearchRedirect from "../../library/util/SearchRedirect";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
-import './FoodSearch.css'
+import './Search.css'
 
-export default class FoodSearch extends Component {
+export default class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {

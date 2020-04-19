@@ -5,11 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Home from './page/home/Home';
 import Food from './page/food/Food';
+import Article from "./page/article/Article";
 
 export default function App() {
     return (
         <Router>
             <Switch>
+                <Route path="/page/:pageName" children={<PageRoute/>}/>
+                <Route path="/article/:articleName" children={<ArticleRoute/>}/>
                 <Route path="/:foodName/:servingSize" children={<FoodRoute/>}/>
                 <Route path="/:foodName" children={<FoodRoute/>}/>
                 <Route path="/">
@@ -26,6 +29,22 @@ function FoodRoute() {
 
     return (
         <Food foodName={foodName} servingSize={servingSize}/>
+    );
+}
+
+function PageRoute() {
+    let {pageName} = useParams();
+
+    return (
+        <Article articleName={pageName}/>
+    );
+}
+
+function ArticleRoute() {
+    let {articleName} = useParams();
+
+    return (
+        <Article articleName={articleName}/>
     );
 }
 

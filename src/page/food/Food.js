@@ -2,17 +2,18 @@ import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import FoodSearch from "../../component/foodsearch/FoodSearch";
+import Search from "../../component/search/Search";
 import Analytics from "../../component/analytics/Analytics";
 import Seo from "../../component/seo/Seo";
 import GetFoodRequest from "../../library/request/GetFoodRequest";
-import ServingSize from "../../component/servingsize/ServingSize";
+import ServingSize from "./components/servingsize/ServingSize";
 import LoadingIndicator from "../../component/loading/LoadingIndicator";
-import CaloricPyramid from "../../component/caloricpyramid/CaloricPyramid";
-import NutritionFacts from "../../component/nutritionfacts/NutritionFacts";
-import NutrientsTable from "../../component/nutrientstable/NutrientsTable";
+import CaloricPyramid from "./components/caloricpyramid/CaloricPyramid";
+import NutritionFacts from "./components/nutritionfacts/NutritionFacts";
+import NutrientsTable from "./components/nutrientstable/NutrientsTable";
 import Navigation from "../../component/navigation/Navigation";
-import NutritionStatements from "../../component/nutritionalstatements/NutritionStatements";
+import NutritionStatements from "./components/nutritionalstatements/NutritionStatements";
+import './Food.css';
 
 export default class Food extends Component {
     constructor(props) {
@@ -79,23 +80,23 @@ export default class Food extends Component {
                 <Analytics/>
                 <Navigation/>
                 <Container>
-                    <FoodSearch/>
+                    <Search/>
                     <Seo seoTags={this.state.seoTags}/>
                     {
 
                         this.state.description.length > 0 &&
                         <Row>
                             <Col xs={12}>
-                                <h1 className="h1"><span className="highlighted">{this.state.description}</span></h1>
+                                <h1 className="underline"><span className="highlighted">{this.state.description}</span></h1>
                             </Col>
                         </Row>
                     }
                     {
                         this.state.calories.length > 0 &&
-                        <Row>
+                        <Row className="calories-section">
                             <Col xs={12}>
-                                <h2 className="h2 header">{this.state.calories}</h2>
-                                <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
+                                    <p className="calories">{this.state.calories}</p>
+                                    <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
                             </Col>
                         </Row>
                     }
@@ -115,7 +116,7 @@ export default class Food extends Component {
                                 {/*        <NutritionStatements nutritionStatements={this.state.nutritionStatements}/>*/}
                                 {/*    </Col>*/}
                                 {/*</Row>*/}
-                                <Row>
+                                <Row className="section-separator">
                                     <Col md={6} lg={4}>
                                         <NutritionFacts nutritionFacts={this.state.nutritionFacts}/>
                                     </Col>

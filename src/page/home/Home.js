@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
-import FoodSearch from "../../component/foodsearch/FoodSearch";
+import Search from "../../component/search/Search";
 import Analytics from "../../component/analytics/Analytics";
 import Seo from "../../component/seo/Seo";
-import ExploreFood from "../../component/explorefood/ExploreFood";
 import Navigation from "../../component/navigation/Navigation";
 
 export default class Home extends Component {
@@ -21,8 +20,7 @@ export default class Home extends Component {
                 <Navigation/>
                 <Container>
                     <Seo title="" description=""/>
-                    <FoodSearch/>
-                    <ExploreFood/>
+                    <Search/>
                 </Container>
             </>
         );
