@@ -1,47 +1,47 @@
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('./fonts/NeueMontreal-Light.woff2') format('woff2'),
-    url('./fonts/NeueMontreal-Light.woff') format('woff');
+    src: url('resources/fonts/NeueMontreal-Light.woff2') format('woff2'),
+    url('resources/fonts/NeueMontreal-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('./fonts/NeueMontreal-Bold.woff2') format('woff2'),
-    url('./fonts/NeueMontreal-Bold.woff') format('woff');
+    src: url('resources/fonts/NeueMontreal-Bold.woff2') format('woff2'),
+    url('resources/fonts/NeueMontreal-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('./fonts/NeueMontreal-BoldItalic.woff2') format('woff2'),
-    url('./fonts/NeueMontreal-BoldItalic.woff') format('woff');
+    src: url('resources/fonts/NeueMontreal-BoldItalic.woff2') format('woff2'),
+    url('resources/fonts/NeueMontreal-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('./fonts/NeueMontreal-LightItalic.woff2') format('woff2'),
-    url('./fonts/NeueMontreal-LightItalic.woff') format('woff');
+    src: url('resources/fonts/NeueMontreal-LightItalic.woff2') format('woff2'),
+    url('resources/fonts/NeueMontreal-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('./fonts/NeueMontreal-Regular.woff2') format('woff2'),
-    url('./fonts/NeueMontreal-Regular.woff') format('woff');
+    src: url('resources/fonts/NeueMontreal-Regular.woff2') format('woff2'),
+    url('resources/fonts/NeueMontreal-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Neue Montreal';
-    src: url('./fonts/NeueMontreal-Italic.woff2') format('woff2'),
-    url('./fonts/NeueMontreal-Italic.woff') format('woff');
+    src: url('resources/fonts/NeueMontreal-Italic.woff2') format('woff2'),
+    url('resources/fonts/NeueMontreal-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }

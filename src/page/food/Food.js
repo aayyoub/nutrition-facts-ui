@@ -2,18 +2,19 @@ import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Search from "../../component/search/Search";
-import Analytics from "../../component/analytics/Analytics";
-import Seo from "../../component/seo/Seo";
+import Search from "../../component/shared/search/Search";
+import Analytics from "../../component/shared/analytics/Analytics";
+import Seo from "../../component/shared/seo/Seo";
 import GetFoodRequest from "../../library/request/GetFoodRequest";
 import ServingSize from "./components/servingsize/ServingSize";
-import LoadingIndicator from "../../component/loading/LoadingIndicator";
+import LoadingIndicator from "../../component/shared/loading/LoadingIndicator";
 import CaloricPyramid from "./components/caloricpyramid/CaloricPyramid";
 import NutritionFacts from "./components/nutritionfacts/NutritionFacts";
 import NutrientsTable from "./components/nutrientstable/NutrientsTable";
-import Navigation from "../../component/navigation/Navigation";
+import Navigation from "../../component/shared/navigation/Navigation";
 import NutritionStatements from "./components/nutritionalstatements/NutritionStatements";
 import './Food.css';
+import Footer from "../../component/shared/footer/Footer";
 
 export default class Food extends Component {
     constructor(props) {
@@ -80,10 +81,9 @@ export default class Food extends Component {
                 <Analytics/>
                 <Navigation/>
                 <Container>
-                    <Search/>
                     <Seo seoTags={this.state.seoTags}/>
+                    <Search/>
                     {
-
                         this.state.description.length > 0 &&
                         <Row>
                             <Col xs={12}>
@@ -134,6 +134,7 @@ export default class Food extends Component {
                                 </Row>
                             </>
                     }
+                    <Footer/>
                 </Container>
             </>
         );

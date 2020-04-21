@@ -11,7 +11,7 @@ export default function App() {
     return (
         <Router>
             <Switch>
-                <Route path="/page/:pageName" children={<PageRoute/>}/>
+                <Route path="/p/:pageName" children={<PageRoute/>}/>
                 <Route path="/article/:articleName" children={<ArticleRoute/>}/>
                 <Route path="/:foodName/:servingSize" children={<FoodRoute/>}/>
                 <Route path="/:foodName" children={<FoodRoute/>}/>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {AsyncTypeahead} from "react-bootstrap-typeahead";
-import GetSearchTermsRequest from "../../library/request/GetSearchTermsRequest";
-import SearchRedirect from "../../library/util/SearchRedirect";
+import GetSearchTermsRequest from "../../../library/request/GetSearchTermsRequest";
+import SearchRedirect from "../../../library/util/SearchRedirect";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
 import './Search.css'

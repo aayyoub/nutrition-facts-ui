@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import Container from 'react-bootstrap/Container';
-import Search from "../../component/search/Search";
-import Analytics from "../../component/analytics/Analytics";
-import Seo from "../../component/seo/Seo";
+import Search from "../../component/shared/search/Search";
+import Analytics from "../../component/shared/analytics/Analytics";
+import Seo from "../../component/shared/seo/Seo";
 import GetArticleRequest from "../../library/request/GetArticleRequest";
-import Navigation from "../../component/navigation/Navigation";
+import Navigation from "../../component/shared/navigation/Navigation";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReactMarkdown from "react-markdown";
+import LoadingIndicator from "../../component/shared/loading/LoadingIndicator";
+import Footer from "../../component/shared/footer/Footer";
 
 export default class Food extends Component {
     constructor(props) {
@@ -42,8 +44,6 @@ export default class Food extends Component {
                 section: article[0].section,
                 isLoading: false
             });
-
-            debugger;
         }
     }
 
@@ -58,21 +58,31 @@ export default class Food extends Component {
                 <Navigation/>
                 <Container>
                     <Seo seoTags={this.state.seoTags}/>
-                    <Row>
-                        <Col>
-                            <h1>{this.state.title}</h1>
-                            {this.state.image && this.state.image.formats && this.state.image.formats.large &&
-                                <img src={"https://cms.nutritionfacts.io" + this.state.image.formats.large.url}/>
-                            }
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <ReactMarkdown source={this.state.content}/>
-                        </Col>
-                    </Row>
+                    <Search/>
+                    {
+                        this.state.isLoading
+                            ?
+                            <LoadingIndicator isLoading={this.state.isLoading}/>
+                            :
+                            <>
+                                <Row>
+                                    <Col>
+                                        <h1>{this.state.title}</h1>
+                                        {
+                                            this.state.image && this.state.image.formats && this.state.image.formats.large &&
+                                            <img src={"https://cms.nutritionfacts.io" + this.state.image.formats.large.url}/>
+                                        }
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <ReactMarkdown source={this.state.content}/>
+                                    </Col>
+                                </Row>
+                            </>
+                    }
+                    <Footer/>
                 </Container>
-            </>
-        );
+            </>)
     }
 }
