@@ -1,6 +1,3 @@
-.logo-section {
-}
-
 .logo {
     font-family: 'Neue Montreal', sans-serif;
     font-size: 1.55rem;
@@ -13,7 +10,6 @@
 .domain {
     font-size: 1.15rem;
     color: #b5b5b5;
-    /*margin-left:0.05rem;*/
 }
 
 .logo-tagline {

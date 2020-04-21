@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import './NutrientsTable.css'
-import NutrientPopover from "../nutrientpopover/NutrientPopover";
 
 export default class NutrientsTable extends Component {
     constructor(props) {
@@ -27,7 +26,7 @@ export default class NutrientsTable extends Component {
                 {
                     this.props.nutrients.length > 0 &&
                     <div className="nutrients-section">
-                        <h3 className="section-title"><span className="highlighted">{this.props.header}</span></h3>
+                        <h3 className="section-title">{this.props.header}</h3>
                         <Table variant="nutrient">
                             <tbody>
                             {
@@ -52,7 +51,7 @@ export default class NutrientsTable extends Component {
                                         {
                                             !nutrient.subcomponent && !nutrient.macronutrient &&
                                             <tr>
-                                                <td className="table-data-nutrient-label nutrient-regular"><NutrientPopover nutrient={nutrient}/></td>
+                                                <td className="table-data-nutrient-label nutrient-regular">{nutrient.commonName}</td>
                                                 <td className="table-data-value">{nutrient.valueRounded} {nutrient.unit}</td>
                                                 <td className="table-data-value">{nutrient.percentDailyValueFormatted}</td>
                                             </tr>

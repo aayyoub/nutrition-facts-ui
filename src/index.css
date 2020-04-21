@@ -74,20 +74,18 @@ form {
 
 h1 {
     font-family: 'Neue Montreal', sans-serif;
-    font-size: 2.25rem;
+    font-size: 2.2rem;
     font-weight: bold;
     font-style: normal;
     text-align: left;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin: 0;
 }
 
 h2 {
     font-family: 'Neue Montreal', sans-serif;
     font-size: 1.7rem;
     font-weight: bold;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin: 0;
 }
 
 h3 {
@@ -96,8 +94,7 @@ h3 {
     font-style: normal;
     font-size: 1.5rem;
     text-align: left;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin: 0;
 }
 
 h4 {
@@ -105,8 +102,7 @@ h4 {
     font-style: normal;
     font-size: 1.0rem;
     text-align: left;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin: 0;
 }
 
 a {
@@ -131,15 +127,14 @@ a:hover {
     text-align: left !important;
 }
 
-.section-separator {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+.row-separator {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.highlighted {
-    /*background-color: #E7E7E7;*/
-    /*border-radius: 0.25rem;*/
-    /*padding: 0.15rem 0.20rem 0.15rem 0.20rem;*/
+.section-separator {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .navbar-colored-navbar {

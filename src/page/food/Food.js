@@ -12,9 +12,7 @@ import CaloricPyramid from "./components/caloricpyramid/CaloricPyramid";
 import NutritionFacts from "./components/nutritionfacts/NutritionFacts";
 import NutrientsTable from "./components/nutrientstable/NutrientsTable";
 import Navigation from "../../component/shared/navigation/Navigation";
-import NutritionStatements from "./components/nutritionalstatements/NutritionStatements";
 import './Food.css';
-import Footer from "../../component/shared/footer/Footer";
 
 export default class Food extends Component {
     constructor(props) {
@@ -85,15 +83,15 @@ export default class Food extends Component {
                     <Search/>
                     {
                         this.state.description.length > 0 &&
-                        <Row>
+                        <Row className="row-separator">
                             <Col xs={12}>
-                                <h1 className="underline"><span className="highlighted">{this.state.description}</span></h1>
+                                <h1 className="underline">{this.state.description}</h1>
                             </Col>
                         </Row>
                     }
                     {
                         this.state.calories.length > 0 &&
-                        <Row className="calories-section">
+                        <Row className="row-separator">
                             <Col xs={12}>
                                     <p className="calories">{this.state.calories}</p>
                                     <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
@@ -106,16 +104,11 @@ export default class Food extends Component {
                             <LoadingIndicator isLoading={this.state.isLoading}/>
                             :
                             <>
-                                <Row>
+                                <Row className="row-separator">
                                     <Col sm={12}>
                                         <CaloricPyramid caloricPyramid={this.state.caloricPyramid}/>
                                     </Col>
                                 </Row>
-                                {/*<Row>*/}
-                                {/*    <Col sm={12}>*/}
-                                {/*        <NutritionStatements nutritionStatements={this.state.nutritionStatements}/>*/}
-                                {/*    </Col>*/}
-                                {/*</Row>*/}
                                 <Row className="section-separator">
                                     <Col md={6} lg={4}>
                                         <NutritionFacts nutritionFacts={this.state.nutritionFacts}/>
@@ -134,7 +127,6 @@ export default class Food extends Component {
                                 </Row>
                             </>
                     }
-                    <Footer/>
                 </Container>
             </>
         );
