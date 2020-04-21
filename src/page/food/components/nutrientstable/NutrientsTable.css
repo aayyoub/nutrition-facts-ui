@@ -49,7 +49,7 @@
     text-decoration: underline;
 }
 
-.btn-show-details:focus,.btn-show-details:active,.btn-show-details:hover {
+.btn-show-details:focus, .btn-show-details:active, .btn-show-details:hover {
     text-decoration: underline;
     outline: none !important;
     box-shadow: none;

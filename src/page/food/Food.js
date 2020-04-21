@@ -93,8 +93,8 @@ export default class Food extends Component {
                         this.state.calories.length > 0 &&
                         <Row className="row-separator">
                             <Col xs={12}>
-                                    <p className="calories">{this.state.calories}</p>
-                                    <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
+                                <p className="calories">{this.state.calories}</p>
+                                <ServingSize servingSizes={this.state.servingSizes} onChange={this.selectServingSize.bind(this)}/>
                             </Col>
                         </Row>
                     }

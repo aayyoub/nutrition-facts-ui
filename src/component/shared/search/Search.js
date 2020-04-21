@@ -49,7 +49,9 @@ export default class Search extends Component {
                     clearButton={true}
                     minLength={2}
                     caseSensitive={false}
-                    filterBy={() => {return true;}}
+                    filterBy={() => {
+                        return true;
+                    }}
                 />
             </div>
         );

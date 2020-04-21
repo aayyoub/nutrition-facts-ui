@@ -138,7 +138,7 @@ a:hover {
 }
 
 .navbar-colored-navbar {
-    color:white;
+    color: white;
     background-color: #202020;
     margin-bottom: 2.25rem;
 }
@@ -152,7 +152,7 @@ a:hover {
 }
 
 .header {
-    float:left;
+    float: left;
     display: inline !important;
     margin-right: 1.2rem;
 }

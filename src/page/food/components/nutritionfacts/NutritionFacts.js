@@ -13,7 +13,8 @@ export default class NutritionFacts extends Component {
                             <h1 className="nutrition-facts-title">Nutrition Facts</h1>
                         </ReactFitText>
                         <h2 className="nutrition-facts-servings-per-container">1 serving per container</h2>
-                        <p className="nutrition-facts-serving-size">Serving size<span className="nutrition-facts-serving-size-value">{this.props.nutritionFacts.selectedServingSize}</span>
+                        <p className="nutrition-facts-serving-size">Serving size<span
+                            className="nutrition-facts-serving-size-value">{this.props.nutritionFacts.selectedServingSize}</span>
                         </p>
                     </div>
 
