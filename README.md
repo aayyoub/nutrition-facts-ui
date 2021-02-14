@@ -1,4 +1,4 @@
-# food-information-service
+# nutrition-facts-ui
 This project is a React app that searches for and retrieves nutritional data for foods.
 
 ## To run the app
